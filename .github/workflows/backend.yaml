@@ -1,10 +1,11 @@
-name: Build and Push Docker Images
+name : Build and Push Frontend Docker Image
 
 on:
   push:
     branches:
       - main
-
+    paths:
+      - backend/**
 
 jobs:
   docker:
@@ -22,13 +23,6 @@ jobs:
       -
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-      -
-        name: Build and push Frontend
-        uses: docker/build-push-action@v6
-        with:
-          context: ./frontend/Dockerfile
-          push: true
-          tags: rajupadidapu/crud-frontend:latest,rajupadidapu/crud-frontend:${{ github.sha }}
       -
         name: Build and push Backend
         uses: docker/build-push-action@v6
