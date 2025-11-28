@@ -10,4 +10,4 @@ COPY . .
 
 EXPOSE 8081
 
-CMD ["ng", "serve", "--port", "8081"]
+CMD ["npx", "ng", "serve", "--host", "0.0.0.0", "--port", "8081"]
