@@ -1,4 +1,4 @@
-FROM node-alpine:18
+FROM node:18-alpine
 
 WORKDIR /app
 
@@ -8,6 +8,6 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 8082
+EXPOSE 8081
 
-CMD ["ng", "serve", "--port", "8082"]
+CMD ["ng", "serve", "--port", "8081"]
