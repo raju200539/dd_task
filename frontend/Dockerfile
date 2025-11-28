@@ -8,6 +8,6 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 8081
+EXPOSE 8082
 
-CMD ["ng", "serve", "--port", "8081"]
+CMD ["ng", "serve", "--port", "8082"]
