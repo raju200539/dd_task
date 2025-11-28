@@ -145,48 +145,40 @@ db.tutorials.find().pretty()
 
 ---
 
-# 📸 Screenshots (Replace the placeholders)
+# 📸 Screenshots
 
 ## 1. CI/CD Configuration (GitHub Actions)
 
-```
-<img width="1006" height="563" alt="image" src="https://github.com/user-attachments/assets/4c250fc6-0b6d-4340-9873-4c71b91382eb" />
 
-```
+<img width="1006" height="563" alt="image" src="https://github.com/user-attachments/assets/4c250fc6-0b6d-4340-9873-4c71b91382eb" />
 
 ## 2. CI/CD Execution Logs
 
-```
+
 <img width="1362" height="543" alt="image" src="https://github.com/user-attachments/assets/3d9cad47-3b10-4c1b-a25e-7d24c75d9354" />
 
-```
 
 ## 3. Dockerhub Images pushing and deploying
 
-```
+
 <img width="639" height="626" alt="image" src="https://github.com/user-attachments/assets/97aa50d6-ca4a-4af5-83c5-f0bf354a0abb" />
 <img width="645" height="564" alt="image" src="https://github.com/user-attachments/assets/5168fba0-ef57-4c6a-b322-5a7d6d75a43b" />
 <img width="1097" height="84" alt="image" src="https://github.com/user-attachments/assets/8bfe6da8-efa5-46d2-adfd-52283b5ccfca" />
 
-```
 
 ## 4. Application Running on EC2 (UI)
 
-```
 <img width="1366" height="685" alt="home" src="https://github.com/user-attachments/assets/fc9675b3-6184-49df-9559-343c58f31720" />
 <img width="1361" height="710" alt="crud_add" src="https://github.com/user-attachments/assets/37c926aa-4427-472b-b959-db355050b1a9" />
 <img width="1365" height="683" alt="crud_add_suc" src="https://github.com/user-attachments/assets/0609818b-a682-48c6-b516-d0d8c1259fec" />
 
-```
 
 ## 5. NGINX Infrastructure & Routing
 
-```
 <img width="1085" height="31" alt="image" src="https://github.com/user-attachments/assets/2497abec-540b-4421-9111-8866c339d348" />
 <img width="1119" height="211" alt="image" src="https://github.com/user-attachments/assets/a72c3e2f-a0d1-4f53-8508-4cbff02042a4" />
 <img width="1092" height="197" alt="image" src="https://github.com/user-attachments/assets/6d8d47be-46dc-4614-9d73-2f7c1d415fdd" />
 
-```
 All we need to install in EC2 is docker because nginx also running as container in the EC2 we have to allow only http traffic in the EC2.
 
 Therefore, Application is secure by not exposing directly to the outside world, It can only accesable through nginx that is http:80
