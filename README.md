@@ -5,7 +5,7 @@ All services (frontend, backend, database) are routed through a production-ready
 
 ---
 
-## 📦 Project Structure
+##  Project Structure
 
 ```
 crud-dd-task-mean-app/
@@ -22,7 +22,7 @@ crud-dd-task-mean-app/
 
 ---
 
-# 🚀 Step-by-Step Setup & Deployment Instructions
+#  Step-by-Step Setup & Deployment Instructions
 
 ## 1️⃣ Clone the Repository
 
@@ -49,7 +49,7 @@ docker build -t <dockerhub_username>/crud-frontend:latest ./frontend
 docker push <dockerhub_username>/crud-frontend:latest
 ```
 
-Your GitHub Actions CI/CD pipeline automates this process.
+GitHub Actions CI/CD pipeline automates this process.
 
 ---
 
@@ -134,18 +134,7 @@ http://<EC2_PUBLIC_IP>/
 
 ---
 
-## 6️⃣ Verify MongoDB Data
-
-```bash
-docker exec -it mongo mongosh
-use dd_db
-show collections
-db.tutorials.find().pretty()
-```
-
----
-
-# 📸 Screenshots
+#  Screenshots
 
 ## 1. CI/CD Configuration (GitHub Actions)
 
@@ -215,7 +204,7 @@ Everything runs inside a private Docker bridge network.
 
 ---
 
-# 📝 docker-compose.yml
+#  docker-compose.yml
 
 ```yaml
 services:
@@ -229,38 +218,40 @@ services:
       - app-net
 
   backend:
-    image: <dockerhub_username>/crud-backend:latest
+    image: rajupadidapu/crud-backend:latest
     container_name: backend
+    restart: unless-stopped
     environment:
       MONGO_URI: mongodb://mongo:27017/dd_db
       PORT: 8080
-    expose:
-      - "8080"
     depends_on:
       - mongo
+    expose:
+      - "8080"
     networks:
       - app-net
 
   frontend:
-    image: <dockerhub_username>/crud-frontend:latest
+    image: rajupadidapu/crud-frontend:latest
     container_name: frontend
-    expose:
-      - "8081"
+    restart: unless-stopped
     depends_on:
       - backend
+    expose:
+      - "8081"
     networks:
       - app-net
 
   nginx:
     image: nginx:alpine
     container_name: nginx
+    depends_on:
+      - frontend
+      - backend
     ports:
       - "80:80"
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
-    depends_on:
-      - frontend
-      - backend
     networks:
       - app-net
 
