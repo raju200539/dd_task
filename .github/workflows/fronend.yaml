@@ -27,6 +27,6 @@ jobs:
         name: Build and push Frontend
         uses: docker/build-push-action@v6
         with:
-          context: ./frontend/Dockerfile
+          context: ./frontend
           push: true
           tags: rajupadidapu/crud-frontend:latest,rajupadidapu/crud-frontend:${{ github.sha }}
